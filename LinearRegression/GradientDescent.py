@@ -1,9 +1,14 @@
 from numpy import *
 
-#def error_for_given_points(b,m,points):
-    
+def error_for_given_points(b,m,points):
+    totalError = 0
+    for i in range(0,len(points)):
+        x = points[i,0]
+        y = points[i,1]
+        totalError += (y-(m*x+b))**2
+    return totalError / float(len(points)) 
 
-#def step_gradient(b_current,m_current,points,learningRate):
+def step_gradient(b_current,m_current,points,learningRate):
     #gradient descent
 
 
